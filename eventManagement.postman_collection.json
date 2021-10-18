@@ -1,0 +1,650 @@
+{
+	"info": {
+		"_postman_id": "8d9b7378-4261-4819-bf04-377b9cce4234",
+		"name": "eventManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n\n  \"password\": \"123123\",\n  \"firstName\":\"jenifer22222\",\n  \"lastName\": \"robert2222\",\n   \"email\": \"jenife22222r@gmail.com\",\n  \"birthDate\": 1165855151585\n\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/register",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"maria@gmail.com\",\n  \"password\": \"123123\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/login",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload Image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVlMTg0NjZlYzMxNzVkNmNiYzEiLCJpYXQiOjE2MzQ1ODU2MzMsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.ICbdNaHzzxDE18oPVmQ9LSq4DLXOlmdborKStsHj2RM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileUpload",
+									"type": "file",
+									"src": "/home/saeid/Pictures/2.png"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/upload",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVhNTg0NjZlYzMxNzVkNmNiYmUiLCJpYXQiOjE2MzQzMjQyMzYsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.-D88_OlABhI0o6eyj-uuwxJUb-RE-ZZxmQPmbrSDKRE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john@gmail.com\",\n  \"password\": \"123123\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/logout",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWQ0MzBlMTM2ZTJmMzFjMzg3OTgiLCJpYXQiOjE2MzQzMTU3MzAsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.JnboI-bKJRmtK7mTJHhakb0MwyW4FDelmnFeW3BnF2I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/edit/:idd",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"edit",
+								":idd"
+							],
+							"variable": [
+								{
+									"key": "idd",
+									"value": "6169ad430e136e2f31c38798"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWQ0MzBlMTM2ZTJmMzFjMzg3OTgiLCJpYXQiOjE2MzQzMTU3MzAsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.JnboI-bKJRmtK7mTJHhakb0MwyW4FDelmnFeW3BnF2I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"username\": \"buyer\",\n  \"password\": \"123321\",\n   \"role\": \"buyer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/list",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWQ0MzBlMTM2ZTJmMzFjMzg3OTgiLCJpYXQiOjE2MzQzMTU3MzAsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.JnboI-bKJRmtK7mTJHhakb0MwyW4FDelmnFeW3BnF2I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"username\": \"buyer\",\n  \"password\": \"123321\",\n   \"role\": \"buyer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}user/detail/:Id",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"detail",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "6169ad430e136e2f31c38798"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWQ0MzBlMTM2ZTJmMzFjMzg3OTgiLCJpYXQiOjE2MzQzMTU3MzAsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.JnboI-bKJRmtK7mTJHhakb0MwyW4FDelmnFeW3BnF2I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}user/delete/:Id",
+							"host": [
+								"{{base}}user"
+							],
+							"path": [
+								"delete",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "6169ad430e136e2f31c38798"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Add event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVhNTg0NjZlYzMxNzVkNmNiYmUiLCJpYXQiOjE2MzQzMTc3MzQsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.s39fbadkMCQjL4moMtXAw-LFrbku78_euBEmDWABscI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Event 555\",\n  \"location\": \"Berlin\",\n  \"startDate\": 1639588035000,\n  \"endDate\":1640020035000 \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}event/add",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit  event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVhNTg0NjZlYzMxNzVkNmNiYmUiLCJpYXQiOjE2MzQzMjQyMzYsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.-D88_OlABhI0o6eyj-uuwxJUb-RE-ZZxmQPmbrSDKRE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Event London\",\n  \"location\": \"London\",\n  \"startDate\": 1642267361000,\n  \"endDate\":1644945761000 \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}event/edit/:id",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6169b91d755def42fe94cea9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVlMTg0NjZlYzMxNzVkNmNiYzEiLCJpYXQiOjE2MzQ1ODA1MjQsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.hNA0rB4WtvKuvpRJFOOHKK1Ux6BwMe6zMG0U8X_NgS0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Event London\",\n  \"location\": \"London\",\n  \"startDate\": 1642267361000,\n  \"endDate\":1644945761000 \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}event/register/:id",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"register",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6169b91d755def42fe94cea9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unregister event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVhNTg0NjZlYzMxNzVkNmNiYmUiLCJpYXQiOjE2MzQ1Nzk3NDcsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.vxtnx7zUMw9JLga1LKNIffY-spWI6Lr57g9FQ3R6U6s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"name\": \"Event London\",\n  \"location\": \"London\",\n  \"startDate\": 1642267361000,\n  \"endDate\":1644945761000 \n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}event/unregister/:id",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"unregister",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6169b91d755def42fe94cea9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List  event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVlMTg0NjZlYzMxNzVkNmNiYzEiLCJpYXQiOjE2MzQ1ODA1MjQsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.hNA0rB4WtvKuvpRJFOOHKK1Ux6BwMe6zMG0U8X_NgS0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"username\": \"buyer\",\n  \"password\": \"123321\",\n   \"role\": \"buyer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}event/list",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail  event",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVhNTg0NjZlYzMxNzVkNmNiYmUiLCJpYXQiOjE2MzQzMTc3MzQsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.s39fbadkMCQjL4moMtXAw-LFrbku78_euBEmDWABscI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n  \"username\": \"buyer\",\n  \"password\": \"123321\",\n   \"role\": \"buyer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}event/detail/:Id",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"detail",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "6169b91d755def42fe94cea9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTY5YWVhNTg0NjZlYzMxNzVkNmNiYmUiLCJpYXQiOjE2MzQzMTc3MzQsImF1ZCI6ImFwcCIsImlzcyI6ImV2ZW50TWFuYWdlbWVudCIsInN1YiI6ImxvZ2luIn0.s39fbadkMCQjL4moMtXAw-LFrbku78_euBEmDWABscI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}event/delete/:Id",
+							"host": [
+								"{{base}}event"
+							],
+							"path": [
+								"delete",
+								":Id"
+							],
+							"variable": [
+								{
+									"key": "Id",
+									"value": "6169ba014a95c1451d7fe218"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "purchase",
+			"item": [
+				{
+					"name": "deposit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU1Y2FjOTBkNmE5ZjI4NjdhOTBhZmMiLCJpYXQiOjE2MzMwMTM0MDcsImF1ZCI6ImFwcCIsImlzcyI6InZlbmRpbmdQcm9qZWN0Iiwic3ViIjoibG9naW4ifQ.SuADn-gKCQMHaSt6YvwSUMoP4pWflr-a2aDBMty8bRU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"deposit\": 100\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}purchase/deposit",
+							"host": [
+								"{{base}}purchase"
+							],
+							"path": [
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU1Y2FjOTBkNmE5ZjI4NjdhOTBhZmMiLCJpYXQiOjE2MzMwMTI4NTEsImF1ZCI6ImFwcCIsImlzcyI6InZlbmRpbmdQcm9qZWN0Iiwic3ViIjoibG9naW4ifQ.PcUdklVGyWolTpHymWO0pXEQW3UDDc5_qq5R9On4VXA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"productId\":\"6155cb1e0d6a9f2867a90b00\", \n\"amount\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}purchase/buy",
+							"host": [
+								"{{base}}purchase"
+							],
+							"path": [
+								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU1Y2FjOTBkNmE5ZjI4NjdhOTBhZmMiLCJpYXQiOjE2MzMwMTI4NTEsImF1ZCI6ImFwcCIsImlzcyI6InZlbmRpbmdQcm9qZWN0Iiwic3ViIjoibG9naW4ifQ.PcUdklVGyWolTpHymWO0pXEQW3UDDc5_qq5R9On4VXA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}purchase/reset",
+							"host": [
+								"{{base}}purchase"
+							],
+							"path": [
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
