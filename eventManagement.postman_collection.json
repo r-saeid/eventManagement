@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\n\n  \"password\": \"123123\",\n  \"firstName\":\"jenifer22222\",\n  \"lastName\": \"robert2222\",\n   \"email\": \"jenife22222r@gmail.com\",\n  \"birthDate\": 1165855151585\n\n\n}",
+							"raw": "{\n\n\n  \"password\": \"123123\",\n  \"firstName\":\"jendifefr22222\",\n  \"lastName\": \"rodbefrt2222\",\n   \"email\": \"jeniffe22f222r@gmail.com\",\n  \"birthDate\": 1165855151585\n\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -535,110 +535,6 @@
 									"key": "Id",
 									"value": "6169ba014a95c1451d7fe218"
 								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "purchase",
-			"item": [
-				{
-					"name": "deposit",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU1Y2FjOTBkNmE5ZjI4NjdhOTBhZmMiLCJpYXQiOjE2MzMwMTM0MDcsImF1ZCI6ImFwcCIsImlzcyI6InZlbmRpbmdQcm9qZWN0Iiwic3ViIjoibG9naW4ifQ.SuADn-gKCQMHaSt6YvwSUMoP4pWflr-a2aDBMty8bRU",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"deposit\": 100\n\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}purchase/deposit",
-							"host": [
-								"{{base}}purchase"
-							],
-							"path": [
-								"deposit"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "buy",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU1Y2FjOTBkNmE5ZjI4NjdhOTBhZmMiLCJpYXQiOjE2MzMwMTI4NTEsImF1ZCI6ImFwcCIsImlzcyI6InZlbmRpbmdQcm9qZWN0Iiwic3ViIjoibG9naW4ifQ.PcUdklVGyWolTpHymWO0pXEQW3UDDc5_qq5R9On4VXA",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\"productId\":\"6155cb1e0d6a9f2867a90b00\", \n\"amount\":1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}purchase/buy",
-							"host": [
-								"{{base}}purchase"
-							],
-							"path": [
-								"buy"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "reset",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTU1Y2FjOTBkNmE5ZjI4NjdhOTBhZmMiLCJpYXQiOjE2MzMwMTI4NTEsImF1ZCI6ImFwcCIsImlzcyI6InZlbmRpbmdQcm9qZWN0Iiwic3ViIjoibG9naW4ifQ.PcUdklVGyWolTpHymWO0pXEQW3UDDc5_qq5R9On4VXA",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{base}}purchase/reset",
-							"host": [
-								"{{base}}purchase"
-							],
-							"path": [
-								"reset"
 							]
 						}
 					},
